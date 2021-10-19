@@ -36,14 +36,13 @@ struct ContentView: View {
                 .scaledToFit()
                 .ignoresSafeArea()
                 .offset(x: -17, y: 0)
-
-            pacman()
-                .scaleEffect(0.7)
-                .offset(x: 170, y: 130)
-            Text("Yellow Pacman")
+            Text("Pink Pacman")
                 .foregroundColor(Color.yellow)
                 .font(.system(size: 50))
                 .offset(x: 0, y: 250)
+            pacman()
+                .scaleEffect(0.7)
+                .offset(x: 170, y: 130)
         }
         
     }
@@ -51,24 +50,24 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
 
 
 struct pacman: View{
-    var offsetx:Double=0;
-    var offsety:Double=0;
     var body: some View{
         Group{
             pacman_shape().offset(x: -20, y: 0).stroke(.black,lineWidth: 2)
-        
-            pacman_body(R: 254.0/255, G: 228.0/255, B: 48.0/255).offset(x: -20, y: 0)
+//            pacman_body(R: 254.0/255, G: 228.0/255, B: 48.0/255).offset(x: -20, y: 0)
             //pink
-            //pacman_body(R: 252.0/255, G: 189.0/255, B: 218.0/255).offset(x: -20, y: 0)
+            pacman_body(R: 252.0/255, G: 189.0/255, B: 218.0/255).offset(x: -20, y: 0)
             pacman_brow()
             pacman_eyes()
-            pacman_nose(R: 254.0/255, G: 228.0/255, B: 48.0/255)
+//            pacman_nose(R: 254.0/255, G: 228.0/255, B: 48.0/255)
+            pacman_nose(R: 252.0/255, G: 189.0/255, B: 218.0/255)
             pacman_mouth()
             pacman_gloves()
             pacman_boots().offset(x: -20, y: 0)
